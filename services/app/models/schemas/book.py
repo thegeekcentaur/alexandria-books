@@ -6,6 +6,7 @@ class BookSchema(BaseModel):
     isbnID: str = Field(..., min_length=5, max_length=20)
     notes: Optional[str]
     tags: Optional[List[str]]
+    publisher: str = Field(..., min_length=2, max_length=40)
 
     class Config:
         schema_extra = {
@@ -15,6 +16,7 @@ class BookSchema(BaseModel):
                 "notes": "To Read",
                 "tags": [
                     "motivational"
-                ]
+                ],
+                "publisher": "Sample Publications"
             }
         }
